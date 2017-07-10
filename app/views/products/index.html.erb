@@ -1,0 +1,8 @@
+<% @products.each do |product| %>
+ <p><%= product.name %> | <%= number_to_currency product.price %>
+ <%= simple_form_for [@order_item] do |f| %>
+   <%= f.input :product_id, :as => :hidden, :input_html => { :value => product.id } %>
+   <%= f.input :quantity %>
+   <%= f.button :submit, "Add to cart" %>
+ <% end %></p>
+<% end %>
