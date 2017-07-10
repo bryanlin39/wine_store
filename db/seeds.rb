@@ -15,3 +15,9 @@ Product.destroy_all
     description: Faker::Lorem.sentence(4)
   )
 end
+
+Product.create!(
+  name: Faker::Coffee.blend_name,
+  price: -1.00,
+  description: Faker::Lorem.sentence(4)
+)

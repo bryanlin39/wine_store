@@ -2,10 +2,12 @@
 <html>
   <head>
     <title>WineStore</title>
+    <meta name="stripe-key" content="<%= ENV['STRIPE_PUB_KEY'] %>" />
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://js.stripe.com/v3/"></script>
   </head>
 
   <body>
@@ -38,7 +40,7 @@
           <% end %>
         </ul>
         <div class="navbar-text navbar-right">
-          <%= current_order.item_number %> Items | <%= number_to_currency current_order.total_price %>
+          <%= link_to current_order.item_number, cart_path %> Items | <%= number_to_currency current_order.total_price %>
         </div>
 
       </div>
