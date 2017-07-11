@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Product.destroy_all
+Order.destroy_all
+OrderItem.destroy_all
 
 10.times do |index|
   Product.create!(
@@ -15,9 +17,3 @@ Product.destroy_all
     description: Faker::Lorem.sentence(4)
   )
 end
-
-Product.create!(
-  name: Faker::Coffee.blend_name,
-  price: -1.00,
-  description: Faker::Lorem.sentence(4)
-)

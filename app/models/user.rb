@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   def register_account
     @user = User.last
-    @account = Account.new(user_id: user.id)
+    @account = Account.new(user_id: @user.id)
     @user.account = @account
     @user.save
     @account.save
