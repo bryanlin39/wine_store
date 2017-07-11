@@ -52,5 +52,14 @@
       <%= yield %>
     </div>
 
+    <% if current_user && current_user.admin %>
+      <footer class="footer">
+        <div class="container text-right">
+          <h5>Admin</h5>
+          <%= link_to "Add New Product", new_product_path %>
+        </div>
+      </footer>
+    <% end %>
+
   </body>
 </html>

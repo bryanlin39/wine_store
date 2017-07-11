@@ -1,9 +1,11 @@
 <% @products.each do |product| %>
- <p><%= product.name %> | <%= number_to_currency product.price %>
- <%= simple_form_for [@order_item] do |f| %>
+  <p><%= link_to product.name, product_path(product) %> | <%= number_to_currency product.price %></p>
+  <%= simple_form_for [@order_item] do |f| %>
    <%= f.input :product_id, :as => :hidden, :input_html => { :value => product.id } %>
    <%= f.input :quantity %>
-   <%= f.button :submit, "Add to cart" %>
- <% end %></p>
- <%= link_to 'Like', new_product_favorite_path(product), :class => 'btn btn-outline-primary'%>
+   <%= f.button :submit, "Add to cart", class: 'btn-outline-success' %>
+  <% end %>
+  <br>
+  <%= link_to 'Like', new_product_favorite_path(product), :class => 'btn btn-outline-primary'%>
+  <hr>
 <% end %>

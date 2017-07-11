@@ -13,5 +13,4 @@ class User < ApplicationRecord
     @account = Account.create!(user_id: @user.id)
   end
 
-
 end

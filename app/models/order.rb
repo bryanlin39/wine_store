@@ -15,6 +15,13 @@ class Order < ApplicationRecord
     self.order_items.length
   end
 
+  def decrease_stock
+    self.order_items.each do |item|
+      item.product.stock -= item.quantity
+      item.product.save
+    end
+  end
+
 
   private
 

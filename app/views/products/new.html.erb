@@ -1,0 +1,18 @@
+<%= form_for @product, url: products_path, html: { multipart: true } do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <br>
+  <%= form.label :price %>
+  <%= form.text_field :price %>
+  <br>
+  <%= form.label :description %>
+  <%= form.text_field :description %>
+  <br>
+  <%= form.label :quantity %>
+  <%= form.text_field :quantity %>
+  <br>
+  <%= form.label :image %>
+  <%= form.file_field :image %>
+  <br>
+  <%= form.submit %>
+<% end %>

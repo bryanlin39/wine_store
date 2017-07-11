@@ -8,8 +8,7 @@
 - [x] Update shopping cart
 - [x] Clear shopping cart after completing order
 - [x] See number of items in cart and total cost in the navbar
-- [ ] Sale items
-- [ ] Paperclip for images
+- [x] Paperclip for images
 - [x] Check out functionality
 - [x] Account profile for history of orders
 - [x] "Favorites" tag for products
@@ -20,14 +19,22 @@
 
 #### Admin User Stories
 - [ ] CRUD for products
-- [ ] 
-
+- [ ] "Featured" products
+- [ ] Shipping and sales tax to total cost
+- [ ] Sale items
+- [ ] Discounts/coupons
+- [ ] Items out of stock
+- [ ] Authorizations
 
 #### Shipping Employee User Stories
-
+- [ ] See all orders that are ready for Shipping
+- [ ] Organize by order date
+- [ ] Change stock of items
+- [ ] Measure how many orders were completed today and how many in the queue
 
 #### API User Stories
 
 
 ### Further Exploration
 - [ ] Custom styling
+- [ ] README

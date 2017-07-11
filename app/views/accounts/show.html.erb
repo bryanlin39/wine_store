@@ -19,5 +19,5 @@
 
 <h4>Favorite Products</h4>
 <% @favorites.each do |favorite| %>
-<h6><%= favorite.product.name %></h6>
+<h6><%= link_to favorite.product.name, product_path(favorite.product) %></h6>
 <% end %>

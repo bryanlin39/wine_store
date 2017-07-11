@@ -9,11 +9,22 @@
 Product.destroy_all
 Order.destroy_all
 OrderItem.destroy_all
+User.destroy_all
+Account.destroy_all
 
 10.times do |index|
   Product.create!(
     name: Faker::Coffee.blend_name,
     price: Faker::Number.decimal(2, 2),
-    description: Faker::Lorem.sentence(4)
+    description: Faker::Lorem.sentence(4),
+    stock: Faker::Number.between(1, 20),
+    image: open('public/images/viognier.jpg')
   )
 end
+
+admin = User.create!(
+  email: 'admin@email.com',
+  password: 'asdfasdf',
+  password_confirmation: 'asdfasdf',
+  admin: true
+)
