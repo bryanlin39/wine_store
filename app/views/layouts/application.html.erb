@@ -40,7 +40,9 @@
           <% end %>
         </ul>
         <div class="navbar-text navbar-right">
-          <%= link_to current_order.item_number, cart_path %> Items | <%= number_to_currency current_order.total_price %>
+          <% if current_user %>
+            <%= link_to current_order.item_number, cart_path %> Items | <%= number_to_currency current_order.total_price %> | <%= link_to 'Profile', account_path(current_user.account) %>
+          <% end %>
         </div>
 
       </div>

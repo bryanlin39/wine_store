@@ -1,0 +1,23 @@
+<h1><%= current_user.email %></h1>
+
+<h3>Order History</h3>
+
+
+<% @orders.each do |order| %>
+  <h5>Order #: <%= order.id %></h5>
+  <ul>
+    <% order.order_items.each do |item| %>
+    <li>
+      <%= item.product.name %><br>
+      Qty: <%= item.quantity %>, <%= number_to_currency item.product.price %>/ea
+    </li>
+    <% end %>
+    <li>Total: <%= number_to_currency order.total_price %></li>
+  </ul>
+  <hr>
+<% end %>
+
+<h4>Favorite Products</h4>
+<% @favorites.each do |favorite| %>
+<h6><%= favorite.product.name %></h6>
+<% end %>

@@ -5,4 +5,5 @@
    <%= f.input :quantity %>
    <%= f.button :submit, "Add to cart" %>
  <% end %></p>
+ <%= link_to 'Like', new_product_favorite_path(product), :class => 'btn btn-outline-primary'%>
 <% end %>
