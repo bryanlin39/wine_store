@@ -9,15 +9,18 @@
 - [x] Clear shopping cart after completing order
 - [x] See number of items in cart and total cost in the navbar
 - [ ] Sale items
+- [ ] Paperclip for images
 - [x] Check out functionality
 - [x] Account profile for history of orders
-- [ ] "Save for later" tag for products
+- [x] "Favorites" tag for products
 - [ ] Product "in stock" count
 - [ ] Reviews for products
 - [x] Save shopping cart so it persists after sign out
 - [ ] Confirmation email once order is completed
 
 #### Admin User Stories
+- [ ] CRUD for products
+- [ ] 
 
 
 #### Shipping Employee User Stories
