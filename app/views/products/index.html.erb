@@ -1,5 +1,8 @@
 <% @products.each do |product| %>
   <p><%= link_to product.name, product_path(product) %> | <%= number_to_currency product.price %></p>
+  <% if product.stock < 10 %>
+    <h5>Low in stock <%= product.stock%></h5>
+  <% end %>
   <%= simple_form_for [@order_item] do |f| %>
    <%= f.input :product_id, :as => :hidden, :input_html => { :value => product.id } %>
    <%= f.input :quantity %>
@@ -7,5 +10,6 @@
   <% end %>
   <br>
   <%= link_to 'Like', new_product_favorite_path(product), :class => 'btn btn-outline-primary'%>
+
   <hr>
 <% end %>

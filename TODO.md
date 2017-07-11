@@ -29,7 +29,7 @@
 #### Shipping Employee User Stories
 - [ ] See all orders that are ready for Shipping
 - [ ] Organize by order date
-- [ ] Change stock of items
+- [x] Change stock of items
 - [ ] Measure how many orders were completed today and how many in the queue
 
 #### API User Stories
