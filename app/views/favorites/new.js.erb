@@ -1,0 +1,5 @@
+var product_id = '<%= @favorite.product_id %>';
+$(function() {
+  $('#like_btn_' + product_id).toggle()
+  $('#unlike_btn_' + product_id).toggle()
+});

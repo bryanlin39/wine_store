@@ -1,0 +1,11 @@
+<% if favorite = current_user.account.favorites.find_by_product_id(product.id) %>
+  <%= form_for favorite, :method => :delete, :remote => true do |f| %>
+    <%= f.submit "Unlike" %>
+  <% end %>
+<% else %>
+  <%= form_for current_user.account.favorites.create(:product_id => product.id), :remote => true do |f| %>
+    <%= f.hidden_field :product_id %>
+    <%= f.hidden_field :account_id %>
+    <%= f.submit "Like" %>
+  <% end %>
+<% end %>

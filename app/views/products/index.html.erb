@@ -9,7 +9,15 @@
    <%= f.button :submit, "Add to cart", class: 'btn-outline-success' %>
   <% end %>
   <br>
-  <%= link_to 'Like', new_product_favorite_path(product), :class => 'btn btn-outline-primary'%>
+    <% if favorite = Favorite.find_by_product_id(current_user, product.id)[0] %>
+      <%= link_to 'Unlike', product_favorite_path(product, favorite), method: 'delete', id: "unlike_btn_#{product.id}", class: 'btn btn-outline-primary', remote: true %>
+      <%= link_to 'Like', new_product_favorite_path(product), id: "like_btn_#{product.id}", class: 'btn btn-outline-primary hidden_btn', remote: true %>
+      
+    <% else %>
+      <%= link_to 'Like', new_product_favorite_path(product), id: "like_btn_#{product.id}", class: 'btn btn-outline-primary', remote: true %>
+
+    <% end %>
+
 
   <hr>
 <% end %>

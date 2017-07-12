@@ -6,6 +6,8 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     @order_item = current_order.order_items.new
+    @favorites = current_user.account.favorites
+
   end
 
   def show

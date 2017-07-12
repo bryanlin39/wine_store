@@ -12,7 +12,7 @@
 - [x] Check out functionality
 - [x] Account profile for history of orders
 - [x] "Favorites" tag for products
-- [ ] Product "in stock" count
+- [x] Product "in stock" count
 - [ ] Reviews for products
 - [x] Save shopping cart so it persists after sign out
 - [ ] Confirmation email once order is completed
@@ -38,3 +38,6 @@
 ### Further Exploration
 - [ ] Custom styling
 - [ ] README
+
+  <%= link_to 'Like', new_product_favorite_path(product), :id => 'like_btn#{product.id}' %>
+    <%= render :partial => 'product', :collection => @products %>

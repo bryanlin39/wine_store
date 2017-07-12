@@ -1,0 +1,3 @@
+var id = '<%= @favorite.product_id %>';
+var product = '<%= @product %>'
+$('#like_btn_' + id).html("<%= link_to 'Unlike', product_favorite_path(product, favorite), method: 'delete', id: "unlike_btn_#{product.id}", class: 'btn btn-outline-primary hidden_btn', remote: true %>")
