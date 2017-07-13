@@ -2,6 +2,8 @@ class CartsController < ApplicationController
 
   def show
     @order_items = current_order.order_items
+    shipping_object = Shipping.new()
+    @price = shipping_object.get_shipping_price()
   end
 
   def order_complete
@@ -10,5 +12,6 @@ class CartsController < ApplicationController
     session[:order_id] = nil
     redirect_to products_path
   end
+
 
 end

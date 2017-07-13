@@ -1,14 +1,20 @@
 <% if @order_items.any? %>
   <% @order_items.each do |item| %>
-    <p><%= item.product.name %> |
+    <div id="item_in_cart_<%= item.id%>">
+      <p><%= item.product.name %> |
 
-    <%= link_to(order_item_path(item), :method => "delete") do%>
-      <i class="fa fa-trash-o" aria-hidden="true"></i>
-    <% end %>
-  </p>
-    <p> Unit Price: <%= number_to_currency item.product.price %> | Quantity: <%= item.quantity %> | Total Price: <%= number_to_currency (item.product.price * item.quantity) %></p>
+      <%= link_to(order_item_path(item), :method => "delete", remote: true) do%>
+        <i class="fa fa-trash-o" aria-hidden="true"></i>
+      <% end %>
+      </p>
+      <p> Unit Price: <%= number_to_currency item.product.price %> | Quantity: <%= item.quantity %> | Total Price: <%= number_to_currency (item.product.price * item.quantity) %></p>
+    </div>
+
   <% end %>
-  <h4>Your Total: <%= number_to_currency current_order.total_price %></h4>
+
+    <h4 id ="cart_total">Your Total: <%= number_to_currency current_order.total_price %></h4>
+
+
 <% else %>
   <p>Your shopping cart is empty.</p>
 <% end %>

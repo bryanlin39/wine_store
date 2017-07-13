@@ -9,9 +9,7 @@
    <%= f.button :submit, "Add to cart", class: 'btn-outline-success' %>
   <% end %>
   <br>
-
-      <%= link_to 'Unlike', unlike_product_path(product), method: 'post', id: "unlike_btn_#{product.id}", class: 'btn btn-outline-primary ' + (if is_product_liked(product) then '' else 'hidden_btn' end), remote: true %>
-      <%= link_to 'Like', like_product_path(product), method: 'post', id: "like_btn_#{product.id}", class: 'btn btn-outline-primary '+ (if is_product_liked(product) then 'hidden_btn' else '' end), remote: true %>
-
+    <%= link_to 'Unlike', unlike_product_path(product), method: 'post', id: "unlike_btn_#{product.id}", class: 'btn btn-outline-primary ' + (if is_product_liked(product) then '' else 'hidden_btn' end), remote: true %>
+    <%= link_to 'Like', like_product_path(product), method: 'post', id: "like_btn_#{product.id}", class: 'btn btn-outline-primary '+ (if is_product_liked(product) then 'hidden_btn' else '' end), remote: true %>
   <hr>
 <% end %>

@@ -10,8 +10,6 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     @order_item = current_order.order_items.new
-    @favorites = current_user.account.favorites
-
   end
 
   def show
@@ -51,7 +49,9 @@ class ProductsController < ApplicationController
   end
 
   def is_product_liked(product)
-    current_user.account.favorites.where("product_id = ?", product.id).count > 0
+    if current_user
+      current_user.account.favorites.where("product_id = ?", product.id).count > 0
+    end
   end
 
 private

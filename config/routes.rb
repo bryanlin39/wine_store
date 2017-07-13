@@ -11,7 +11,6 @@ Rails.application.routes.draw do
       post :like
       post :unlike
     end
-  
   end
 
   resources :order_items

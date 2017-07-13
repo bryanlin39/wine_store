@@ -1,0 +1,5 @@
+
+var item_id = '<%= @item.id%>'
+$("#item_in_cart_" + item_id).remove();
+console.log(item_id);
+$("#cart_total").html('Your Total: <%= number_to_currency current_order.total_price %>');
