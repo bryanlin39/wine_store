@@ -1,0 +1,5 @@
+var product_id = '<%= @product_id %>';
+$(function() {
+  $('#like_btn_' + product_id).addClass('hidden_btn')
+  $('#unlike_btn_' + product_id).removeClass('hidden_btn')
+});
